@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { MdIconModule, MdToolbarModule, MdButtonModule} from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 
@@ -12,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    DashboardModule,
     MdToolbarModule,
     MdIconModule,
     MdButtonModule
