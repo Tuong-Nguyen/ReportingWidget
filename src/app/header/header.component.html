@@ -1,0 +1,17 @@
+<md-toolbar [ngStyle]="{padding:0}">
+  <div class="mat-toolbar">
+    <md-toolbar-row class="header">
+      <button md-icon-button [ngStyle]="{backgroundColor: '#cacaca'}"><md-icon>menu</md-icon></button>
+      <div class="centerHeader">
+        <h2 [ngStyle]="{textAlign: 'center'}">Dashboard</h2>
+      </div>
+      <button md-button *ngIf="!isLogin; else userProfileLink">Login</button>
+      <ng-template #userProfileLink >
+        <button md-button routerLink="#" [ngStyle]="{backgroundColor:'#cacaca', color:'#1210FF'}" >{{userName}}</button>
+        <button md-button>logout</button>
+      </ng-template>
+    </md-toolbar-row>
+  </div>
+</md-toolbar>
+
+
