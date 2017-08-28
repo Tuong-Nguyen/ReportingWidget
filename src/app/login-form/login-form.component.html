@@ -2,28 +2,38 @@
 
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-    <div class="mat-row">
-      <md-input-container>
-        <input mdInput
-               ngModel
-               name="username"
-               required placeholder="User name"/>
-        <md-error>Username is required</md-error>
-      </md-input-container>
+    <div fxLayout="column">
+
+      <div class="mat-row">
+        <md-input-container>
+          <input mdInput
+                 type="text"
+                 ngModel
+                 name="username"
+                 required placeholder="User name"/>
+          <md-error>Username is required</md-error>
+        </md-input-container>
+      </div>
+
+      <div class="mat-row">
+        <md-input-container>
+          <input mdInput
+                 type="password"
+                 ngModel
+                 name="password"
+                 required placeholder="Password"/>
+          <md-error>Password is required</md-error>
+        </md-input-container>
+      </div>
+
+      <div class="mat-row">
+        <button [disabled]="!f.valid" md-raised-button color="primary" type="submit">Login</button>
+      </div>
+
     </div>
 
-    <div class="mat-row">
-      <md-input-container>
-        <input mdInput
-               ngModel
-               name="password"
-               required placeholder="Password"/>
-        <md-error>Password is required</md-error>
-      </md-input-container>
-    </div>
-
-    <button [disabled]="!f.valid" md-raised-button color="primary" type="submit">Login</button>
 
   </form>
+
 
 </div>
