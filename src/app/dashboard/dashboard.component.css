@@ -2,6 +2,16 @@
   float: right;
   display: inline-block;
 }
+.dashboardToolbar .iconStyle{
+  font-size: xx-large;
+  margin-bottom: 6px;
+  margin-right: 6px;
+}
+.dashboardToolbar .buttonStyle{
+  font-size: xx-large;
+  margin: 10px;
+  margin-right: 20px;
+}
 .dashboardTabs{
   clear: right;
 }

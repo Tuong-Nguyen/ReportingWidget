@@ -3,8 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
-import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule } from '@angular/material';
-import { TabcontentComponent } from './../tabcontent/tabcontent.component';
+import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule, MdTooltipModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -14,11 +13,11 @@ import { TabcontentComponent } from './../tabcontent/tabcontent.component';
     MdButtonModule,
     MdIconModule,
     BrowserAnimationsModule,
-    MdGridListModule
+    MdGridListModule,
+    MdTooltipModule
   ],
   declarations: [
-    DashboardComponent,
-    TabcontentComponent
+    DashboardComponent
   ],
   exports: [DashboardComponent]
 })
