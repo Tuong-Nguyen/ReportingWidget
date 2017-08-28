@@ -1,11 +1,4 @@
-.header{
-  background-color: #cacaca;
-  margin: 0;
-  padding: 0;
-}
-.centerHeader{
+.headerTitle{
   flex: 1;
-}
-.centerHeader h2{
   text-align: center;
 }

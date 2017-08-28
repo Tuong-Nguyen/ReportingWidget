@@ -6,11 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() isLogin: boolean = false;
-  @Input() userName: string = '';
+  @Input() isLogin = false;
+  @Input() userName = '';
   constructor() { }
 
   ngOnInit() {
   }
-
 }

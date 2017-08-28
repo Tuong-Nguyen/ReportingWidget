@@ -1,27 +1,25 @@
-<md-toolbar class="header">
-  <div class="mat-toolbar header">
-    <md-toolbar-row class="mat-toolbar-row header">
-      <button md-icon-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon></button>
-      <md-menu #appMenu="mdMenu">
+<md-toolbar class="mat-toolbar mat-primary" color="primary" role="toolbar">
+  <!--<md-toolbar-row>-->
+    <button md-icon-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon></button>
+    <md-menu #appMenu="mdMenu" [overlapTrigger]="false">
+      <button md-menu-item>
+        <span>Manage Dashboard</span>
+      </button>
+    </md-menu>
+    <div class="headerTitle">
+      <h2>Dashboard</h2>
+    </div>
+    <button md-button *ngIf="!isLogin; else userProfileLink">Login</button>
+    <ng-template #userProfileLink >
+      <button md-button #btnUserName [mdMenuTriggerFor]="menu">{{userName}}</button>
+      <md-menu #menu="mdMenu" [overlapTrigger]="false">
         <button md-menu-item>
-          <span>Manage Dashboard</span>
+          <md-icon>exit_to_app</md-icon>
+          <span>Logout</span>
         </button>
       </md-menu>
-      <div class="centerHeader">
-        <h2>Dashboard</h2>
-      </div>
-      <button md-button *ngIf="!isLogin; else userProfileLink">Login</button>
-      <ng-template #userProfileLink >
-        <button md-button routerLink="#" [mdMenuTriggerFor]="menu">{{userName}}</button>
-        <md-menu #menu="mdMenu">
-          <button md-menu-item>
-            <md-icon>exit_to_app</md-icon>
-            <span>Logout</span>
-          </button>
-        </md-menu>
-      </ng-template>
-    </md-toolbar-row>
-  </div>
+    </ng-template>
+  <!--</md-toolbar-row>-->
 </md-toolbar>
 
 
