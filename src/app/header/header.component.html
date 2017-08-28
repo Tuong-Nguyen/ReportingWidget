@@ -1,14 +1,24 @@
-<md-toolbar [ngStyle]="{padding:0}">
-  <div class="mat-toolbar">
-    <md-toolbar-row class="header">
-      <button md-icon-button [ngStyle]="{backgroundColor: '#cacaca'}"><md-icon>menu</md-icon></button>
+<md-toolbar class="header">
+  <div class="mat-toolbar header">
+    <md-toolbar-row class="mat-toolbar-row header">
+      <button md-icon-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon></button>
+      <md-menu #appMenu="mdMenu">
+        <button md-menu-item>
+          <span>Manage Dashboard</span>
+        </button>
+      </md-menu>
       <div class="centerHeader">
-        <h2 [ngStyle]="{textAlign: 'center'}">Dashboard</h2>
+        <h2>Dashboard</h2>
       </div>
       <button md-button *ngIf="!isLogin; else userProfileLink">Login</button>
       <ng-template #userProfileLink >
-        <button md-button routerLink="#" [ngStyle]="{backgroundColor:'#cacaca', color:'#1210FF'}" >{{userName}}</button>
-        <button md-button>logout</button>
+        <button md-button routerLink="#" [mdMenuTriggerFor]="menu">{{userName}}</button>
+        <md-menu #menu="mdMenu">
+          <button md-menu-item>
+            <md-icon>exit_to_app</md-icon>
+            <span>Logout</span>
+          </button>
+        </md-menu>
       </ng-template>
     </md-toolbar-row>
   </div>

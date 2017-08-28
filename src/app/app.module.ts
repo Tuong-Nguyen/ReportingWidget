@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MdIconModule, MdToolbarModule, MdButtonModule} from '@angular/material';
+import { MdIconModule, MdToolbarModule, MdButtonModule, MdMenuModule} from '@angular/material';
 import { HeaderComponent } from './header/header.component';
+import { BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,10 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     MdToolbarModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    MdMenuModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
