@@ -14,13 +14,13 @@
   </div>
   <div class="dashboardManagementBody">
     <md-table [dataSource]="dataSource" mdSort>
-      <ng-container cdkColumnDef="dashboardName">
+      <ng-container cdkColumnDef="dashboardName" fxFlex="70%">
         <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
         <md-cell *cdkCellDef="let row">{{row.name}}</md-cell>
       </ng-container>
-      <ng-container cdkColumnDef="Actions" fxFlex="40">
-        <md-header-cell *cdkHeaderCellDef> Actions </md-header-cell>
-        <md-cell *cdkCellDef="let row">
+      <ng-container cdkColumnDef="Actions">
+        <md-header-cell *cdkHeaderCellDef class="actionsColumn"> Actions </md-header-cell>
+        <md-cell *cdkCellDef="let row" class="actionsColumn">
           <div class="actions" fxLayoutAlign="center center" fxLayoutGap="10px">
             <button md-icon-button><md-icon>open_in_new</md-icon></button>
             <button md-icon-button><md-icon>settings</md-icon></button>

@@ -12,9 +12,6 @@
   float: right;
   margin: 20px;
 }
-.actions{
-  display: inline-block;
+.actionsColumn{
   text-align: center;
-  align-content: center;
-  align-items: center;
 }
