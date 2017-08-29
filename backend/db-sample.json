@@ -1,6 +1,54 @@
 {
-  "users": [{
-    "username": "admin",
-    "displayname": "Administrator"
-  }]
+  "widgets": [
+    {
+      "id": 1,
+      "name": "Hello, i am a pie.",
+      "type": "Pie",
+      "data_stream": "Agent",
+      "default_size": {
+        "rows": 8,
+        "columns": 4
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bar chart.",
+      "type": "Bar",
+      "data_stream": "Agent",
+      "default_size": {
+        "rows": 1,
+        "columns": 2
+      }
+    },
+    {
+      "id": 3,
+      "name": "Donut chart.",
+      "type": "Donut",
+      "data_stream": "Agent",
+      "default_size": {
+        "rows": 3,
+        "columns": 3
+      }
+    },
+    {
+      "id": 4,
+      "name": "Plot chart.",
+      "type": "Plot",
+      "data_stream": "Agent",
+      "default_size": {
+        "rows": 1,
+        "columns": 1
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bar chart.",
+      "type": "Bar",
+      "data_stream": "Agent",
+      "default_size": {
+        "rows": 3,
+        "columns": 6
+      }
+    }
+  ]
 }
