@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() isLogin = false;
-  @Input() userName = '';
+  @Input() isLogin: boolean
+  @Input() userName: string;
   constructor() { }
 
   ngOnInit() {
