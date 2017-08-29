@@ -14,7 +14,7 @@
         placeholder="Widget name"
         formControlName="name"
       >
-      <md-error *ngIf="name.invalid && (name.dirty || name.touched)">
+      <md-error *ngIf="errors.name.required">
         Name is required.
       </md-error>
     </md-input-container>
@@ -53,8 +53,11 @@
           placeholder="Number of rows"
           formControlName="rows"
         >
-        <md-error *ngIf="rows.invalid && (rows.dirty || rows.touched)">
+        <md-error *ngIf="errors.rows.required">
           Number of rows is required.
+        </md-error>
+        <md-error *ngIf="!errors.rows.required && errors.rows.invalidSize">
+          Number of rows must be positive number and less than 12.
         </md-error>
       </md-input-container>
       <label for="rows">rows</label>
@@ -68,15 +71,26 @@
           placeholder="Number of columns"
           formControlName="columns"
         >
-        <md-error *ngIf="columns.invalid && (columns.dirty || columns.touched)">
+        <md-error *ngIf="errors.columns.required">
           Number of columns is required.
+        </md-error>
+        <md-error *ngIf="!errors.columns.required && errors.columns.invalidSize">
+          Number of columns must be positive number and less than 12.
         </md-error>
       </md-input-container>
       <label for="columns">columns</label>
     </div>
   </div>
   <div class="btn-group">
-    <button md-raised-button color="accent">Cancel</button>
-    <button md-raised-button color="accent">Next</button>
+    <button md-raised-button color="primary">
+      Cancel
+    </button>
+    <button
+      md-raised-button
+      color="primary"
+      [disabled]="!addWidgetForm.valid"
+    >
+      Next
+    </button>
   </div>
 </form>
