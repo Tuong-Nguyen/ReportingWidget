@@ -1,9 +1,2 @@
 @import '~@angular/material/theming';
 @import '../styles/variables';
-
-div {
-  margin-top: 12px;
-  width: 50px;
-  height: 50px;
-  background-color: mat-color($app-primary);
-}
