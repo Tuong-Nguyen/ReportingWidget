@@ -1,0 +1,41 @@
+<div>
+  <div class="dashboardManagementHeader">
+    <md-toolbar class="mat-toolbar mat-primary" color="primary" role="toolbar">
+      <button md-button md-icon-button md-tooltip="Add New">
+        <md-icon>menu</md-icon>
+      </button>
+      <div class="heasderTitle">
+        <h2>Dashboar Management</h2>
+      </div>
+      <button md-button md-icon-button>
+        <md-icon>add_circle</md-icon>
+      </button>
+    </md-toolbar>
+  </div>
+  <div class="dashboardManagementBody">
+    <md-table [dataSource]="dataSource">
+      <ng-container cdkColumnDef="dashboardName">
+        <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+        <md-cell *cdkCellDef="let row">{{row.name}}</md-cell>
+      </ng-container>
+      <ng-container cdkColumnDef="Actions" fxFlex="40">
+        <md-header-cell *cdkHeaderCellDef> Actions </md-header-cell>
+        <md-cell *cdkCellDef="let row">
+          <div class="actions" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <button md-icon-button><md-icon>open_in_new</md-icon></button>
+            <button md-icon-button><md-icon>settings</md-icon></button>
+            <button md-icon-button><md-icon>delete_forever</md-icon></button>
+          </div>
+        </md-cell>
+      </ng-container>
+      <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
+    <div>
+      <button md-button md-mini-fab class="dashboardManagementFooterActionButton"
+              color="primary" md-tooltip="Add New">
+        <md-icon>add_circle</md-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule } from '@angular/material';
+import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule, MdToolbarModule,
+  MdTableModule, MdSortModule, MdTooltipModule} from '@angular/material';
+import { DashboardManagementComponent } from '../dashboard-management/dashboard-management.component';
+import { CdkTableModule} from '@angular/cdk';
+
 
 @NgModule({
   imports: [
@@ -10,8 +14,18 @@ import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule } from '@a
     MdTabsModule,
     MdButtonModule,
     MdIconModule,
-    MdGridListModule
+    MdGridListModule,
+    MdToolbarModule,
+    MdTableModule,
+    MdSortModule,
+    CdkTableModule,
+    MdTooltipModule
   ],
-  declarations: []
+  declarations: [
+    DashboardManagementComponent
+  ],
+  exports: [
+    DashboardManagementComponent
+  ]
 })
 export class DashboardModule { }
