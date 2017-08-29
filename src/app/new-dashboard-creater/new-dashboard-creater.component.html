@@ -1,0 +1,22 @@
+<div>
+  <form [formGroup]="newDashboardForm" (ngSubmit)="createNewDashboar()">
+    <div class="modalHeader">
+      <h2>New Dashboard</h2>
+    </div>
+    <div class="modalContent" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px"
+         fxLayout.xs="column" fxLayoutAlign.xs="start start">
+          <label>Name</label>
+          <md-input-container>
+            <input mdInput required formControlName="dashboardName" />
+            <md-error *ngIf="newDashboardForm.get('dashboardName').hasError('required') &&
+              newDashboardForm.get('dashboardName').touched">
+              Name is <strong>required</strong>
+            </md-error>
+          </md-input-container>
+    </div>
+    <div class="modalAction">
+      <button md-raised-button md-dialog-close>Cancel</button>
+      <button md-raised-button type="submit">Save</button>
+    </div>
+  </form>
+</div>

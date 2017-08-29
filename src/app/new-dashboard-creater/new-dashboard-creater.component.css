@@ -1,0 +1,13 @@
+.modalHeader{
+  text-align: center;
+}
+.modalContent{
+  display: flex;
+}
+.modalAction{
+  clear: both;
+  float: right;
+}
+.modalLayout{
+
+}
