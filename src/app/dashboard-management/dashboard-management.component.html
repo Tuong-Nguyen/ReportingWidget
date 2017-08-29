@@ -1,21 +1,21 @@
 <div>
   <div class="dashboardManagementHeader">
     <md-toolbar class="mat-toolbar mat-primary" color="primary" role="toolbar">
-      <button md-button md-icon-button md-tooltip="Add New">
+      <button md-button md-icon-button>
         <md-icon>menu</md-icon>
       </button>
       <div class="heasderTitle">
         <h2>Dashboar Management</h2>
       </div>
-      <button md-button md-icon-button>
+      <button md-button md-icon-button md-tooltip="Add New">
         <md-icon>add_circle</md-icon>
       </button>
     </md-toolbar>
   </div>
   <div class="dashboardManagementBody">
-    <md-table [dataSource]="dataSource">
+    <md-table [dataSource]="dataSource" mdSort>
       <ng-container cdkColumnDef="dashboardName">
-        <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+        <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
         <md-cell *cdkCellDef="let row">{{row.name}}</md-cell>
       </ng-container>
       <ng-container cdkColumnDef="Actions" fxFlex="40">
