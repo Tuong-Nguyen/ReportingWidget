@@ -1,0 +1,15 @@
+md-select {
+  width: 100%;
+}
+
+.form-group {
+  align-items: center;
+}
+
+.choose-type {
+  margin-bottom: 16px;
+}
+
+.btn-group {
+  margin-top: 8px;
+}
