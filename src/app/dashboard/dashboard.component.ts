@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {MdDialog} from '@angular/material';
-import {NewDashboardCreaterComponent} from './../new-dashboard-creater/new-dashboard-creater.component';
+import {NewDashboardCreaterComponent} from '../new-dashboard-creater/new-dashboard-creater.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,16 +13,21 @@ export class DashboardComponent implements OnInit {
     {name: 'Two'},
     {name: 'Three'}
   ];
-  // createNewDashboardDialog: MdDialog;
-  constructor(public createNewDashboardDialog: MdDialog) {
-    this.ngOnInit();
+  _createNewDashboardDialog: MdDialog;
+  constructor(createNewDashboardDialog: MdDialog) {
+    this._createNewDashboardDialog = createNewDashboardDialog;
   }
 
   ngOnInit() {
   }
 
   openCreateNewDashboardDialog() {
-    this.createNewDashboardDialog.open(NewDashboardCreaterComponent, {height: '400px',
-      width: '600px'});
+    const dialog =  this._createNewDashboardDialog.open(NewDashboardCreaterComponent, {
+      width: '600px',
+      data: {}
+    });
+    dialog.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 }

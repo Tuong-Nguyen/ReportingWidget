@@ -13,7 +13,6 @@ export class NewDashboardCreaterComponent implements OnInit {
   newDashboardForm: FormGroup;
   constructor(dialogRef: MdDialogRef<NewDashboardCreaterComponent>) {
     this._dialogRef = dialogRef;
-    // this._data = data;
   }
 
   ngOnInit() {
@@ -24,6 +23,7 @@ export class NewDashboardCreaterComponent implements OnInit {
   }
   createNewDashboar() {
     console.log(this.newDashboardForm);
+    this._data = this.newDashboardForm.value;
   }
   onNoClick(): void {
     this._dialogRef.close();
