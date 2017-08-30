@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div fxLayout="column" fxLayoutAlign="center">
+    <!--Username input-->
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div fxFlex="30" fxLayoutAlign="end center">
+        <label>Username:</label>
+      </div>
+      <div fxFlex="70">
+        <md-input-container>
+          <input mdInput
+                 type="text"
+                 id="username"
+                 formControlName="username"/>
+          <md-error>Username is required</md-error>
+        </md-input-container>
+      </div>
+    </div>
+    <!--End Username input-->
+    <!--Password input-->
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div fxFlex="30" fxLayoutAlign="end center">
+        <label>Password:</label>
+      </div>
+      <div fxFlex="70">
+        <md-input-container>
+          <input mdInput
+                 type="password"
+                 id="password"
+                 formControlName="password"/>
+          <md-error>Password is required</md-error>
+        </md-input-container>
+      </div>
+    </div>
+    <!--End Password input-->
+    <div fxLayout="row" fxFlexOffset="30px">
+      <div fxFlex="70" fxFlexOffset="30">
+        <button md-raised-button color="primary" type="submit">Login</button>
+      </div>
+    </div>
+  </div>
+</form>
+
