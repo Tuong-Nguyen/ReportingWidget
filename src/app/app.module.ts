@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AddWidgetModule } from './addwidget/add-widget.module';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginFormComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AddWidgetModule
+    AddWidgetModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
