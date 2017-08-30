@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AddWidgetModule } from './addwidget/add-widget.module';
 import { UserModule } from './user/user.module';
+import { DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AddWidgetModule,
-    UserModule
+    UserModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

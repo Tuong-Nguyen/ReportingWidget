@@ -22,8 +22,7 @@ export class NewDashboardCreaterComponent implements OnInit {
     );
   }
   createNewDashboar() {
-    console.log(this.newDashboardForm);
-    this._data = this.newDashboardForm.value;
+    this._dialogRef.close(this.newDashboardForm.value);
   }
   onNoClick(): void {
     this._dialogRef.close();
