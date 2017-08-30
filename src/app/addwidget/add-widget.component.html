@@ -1,0 +1,96 @@
+<h1>New Widget Template</h1>
+<form
+  novalidate
+  [formGroup]="addWidgetForm"
+>
+  <div class="form-group" fxLayout="row wrap">
+    <label for="name" fxFlex="20%">
+      Name:
+    </label>
+    <md-input-container floatPlaceholder="never" fxFlex="80%">
+      <input
+        mdInput
+        id="name"
+        placeholder="Widget name"
+        formControlName="name"
+      >
+      <md-error *ngIf="errors.name.required">
+        Name is required.
+      </md-error>
+    </md-input-container>
+  </div>
+  <div class="form-group choose-type" fxLayout="row wrap">
+    <label fxFlex="20%">Widget type:</label>
+    <div fxFlex="80%">
+      <md-select formControlName="type">
+        <md-option
+          *ngFor="let type of types"
+          [value]="type"
+        >
+          {{type}}
+        </md-option>
+      </md-select>
+    </div>
+  </div>
+  <div class="form-group" fxLayout="row wrap">
+    <label fxFlex="20%">Data stream:</label>
+    <div fxFlex="80%">
+      <md-select formControlName="dataStream">
+        <md-option *ngFor="let stream of dataStreams" [value]="stream">
+          {{stream}}
+        </md-option>
+      </md-select>
+    </div>
+  </div>
+  <div class="form-group" formGroupName="defaultSize" fxLayout="row wrap">
+    <label fxFlex="20%">Default size:</label>
+    <div fxFlex="40%">
+      <md-input-container floatPlaceholder="never">
+        <input
+          mdInput
+          type="number"
+          id="rows"
+          placeholder="Number of rows"
+          formControlName="rows"
+        >
+        <md-error *ngIf="errors.rows.required">
+          Number of rows is required.
+        </md-error>
+        <md-error *ngIf="!errors.rows.required && errors.rows.invalidSize">
+          Number of rows must be positive number and less than 12.
+        </md-error>
+      </md-input-container>
+      <label for="rows">rows</label>
+    </div>
+    <div fxFlex="40%">
+      <md-input-container floatPlaceholder="never">
+        <input
+          mdInput
+          type="number"
+          id="columns"
+          placeholder="Number of columns"
+          formControlName="columns"
+        >
+        <md-error *ngIf="errors.columns.required">
+          Number of columns is required.
+        </md-error>
+        <md-error *ngIf="!errors.columns.required && errors.columns.invalidSize">
+          Number of columns must be positive number and less than 12.
+        </md-error>
+      </md-input-container>
+      <label for="columns">columns</label>
+    </div>
+  </div>
+  <div class="btn-group">
+    <button md-raised-button color="accent">
+      Cancel
+    </button>
+    <button
+      md-raised-button
+      color="primary"
+      [disabled]="!addWidgetForm.valid"
+    >
+      Next
+    </button>
+  </div>
+</form>

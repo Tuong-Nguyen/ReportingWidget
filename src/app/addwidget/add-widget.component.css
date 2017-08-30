@@ -1,0 +1,16 @@
+md-select {
+  width: 100%;
+}
+
+.form-group {
+  align-items: center;
+}
+
+.choose-type {
+  margin-bottom: 16px;
+}
+
+.btn-group {
+  padding-left: 20%;
+  margin-top: 24px;
+}
