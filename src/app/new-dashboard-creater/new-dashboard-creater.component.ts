@@ -8,9 +8,13 @@ import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
   styleUrls: ['./new-dashboard-creater.component.css']
 })
 export class NewDashboardCreaterComponent implements OnInit {
-  @Inject(MD_DIALOG_DATA) data: any;
+  public _dialogRef: MdDialogRef<NewDashboardCreaterComponent>;
+  @Inject(MD_DIALOG_DATA) _data: any;
   newDashboardForm: FormGroup;
-  constructor() { }
+  constructor(dialogRef: MdDialogRef<NewDashboardCreaterComponent>) {
+    this._dialogRef = dialogRef;
+    // this._data = data;
+  }
 
   ngOnInit() {
     this.newDashboardForm = new FormGroup({
@@ -20,5 +24,8 @@ export class NewDashboardCreaterComponent implements OnInit {
   }
   createNewDashboar() {
     console.log(this.newDashboardForm);
+  }
+  onNoClick(): void {
+    this._dialogRef.close();
   }
 }
