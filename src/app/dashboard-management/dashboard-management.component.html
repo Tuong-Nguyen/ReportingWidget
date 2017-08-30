@@ -13,7 +13,7 @@
     </md-toolbar>
   </div>
   <div class="dashboardManagementBody">
-    <md-table [dataSource]="dataSource" mdSort>
+    <md-table [dataSource]="dataSource4" mdSort>
       <ng-container cdkColumnDef="dashboardName" fxFlex="70%">
         <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
         <md-cell *cdkCellDef="let row">{{row.name}}</md-cell>
