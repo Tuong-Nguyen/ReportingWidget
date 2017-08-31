@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
 import { MdTabsModule, MdButtonModule, MdIconModule, MdGridListModule, MdTooltipModule,
   MdInputModule} from '@angular/material';
-import { NewDashboardCreaterComponent} from '../new-dashboard-creater/new-dashboard-creater.component';
+import { NewDashboardComponent} from '../new-dashboard/new-dashboard.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { MdDialogModule } from '@angular/material';
 
@@ -26,10 +26,10 @@ import { MdDialogModule } from '@angular/material';
   ],
   declarations: [
     DashboardComponent,
-    NewDashboardCreaterComponent
+    NewDashboardComponent
   ],
   entryComponents: [
-    NewDashboardCreaterComponent
+    NewDashboardComponent
   ],
   exports: [DashboardComponent]
 })

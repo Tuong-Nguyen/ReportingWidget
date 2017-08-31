@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {MdDialog} from '@angular/material';
-import {NewDashboardCreaterComponent} from '../new-dashboard-creater/new-dashboard-creater.component';
+import {NewDashboardComponent} from '../new-dashboard/new-dashboard.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   }
 
   openCreateNewDashboardDialog() {
-    const dialog =  this._createNewDashboardDialog.open(NewDashboardCreaterComponent, {
+    const dialog =  this._createNewDashboardDialog.open(NewDashboardComponent, {
       width: '600px',
       data: {}
     });

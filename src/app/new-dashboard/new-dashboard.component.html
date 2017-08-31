@@ -15,8 +15,8 @@
           </md-input-container>
     </div>
     <div class="modalAction">
-      <button md-raised-button md-dialog-close>Cancel</button>
-      <button md-raised-button type="submit">Save</button>
+      <button md-raised-button md-dialog-close color="accent">Cancel</button>
+      <button md-raised-button type="submit" [disabled]="!newDashboardForm.get('dashboardName').valid" color="primary">Save</button>
     </div>
   </form>
 </div>

@@ -3,15 +3,15 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
 
 @Component({
-  selector: 'app-new-dashboard-creater',
-  templateUrl: './new-dashboard-creater.component.html',
-  styleUrls: ['./new-dashboard-creater.component.css']
+  selector: 'app-new-dashboard',
+  templateUrl: './new-dashboard.component.html',
+  styleUrls: ['./new-dashboard.component.css']
 })
-export class NewDashboardCreaterComponent implements OnInit {
-  public _dialogRef: MdDialogRef<NewDashboardCreaterComponent>;
+export class NewDashboardComponent implements OnInit {
+  public _dialogRef: MdDialogRef<NewDashboardComponent>;
   @Inject(MD_DIALOG_DATA) _data: any;
   newDashboardForm: FormGroup;
-  constructor(dialogRef: MdDialogRef<NewDashboardCreaterComponent>) {
+  constructor(dialogRef: MdDialogRef<NewDashboardComponent>) {
     this._dialogRef = dialogRef;
   }
 
