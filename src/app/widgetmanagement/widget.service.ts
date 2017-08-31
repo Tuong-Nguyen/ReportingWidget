@@ -16,19 +16,19 @@ export class WidgetService {
     this.http = http;
   }
 
+  private static getUrl() {
+    return WidgetService.BASE_URL + WidgetService.ENDPOINT;
+  }
+
   getAll(): Observable<Widget[]> {
-    return this.http.get<Widget[]>(this.getUrl());
+    return this.http.get<Widget[]>(WidgetService.getUrl());
   }
 
   add(widget: Widget) {
-    this.http.post(this.getUrl(), widget);
+    this.http.post(WidgetService.getUrl(), widget);
   }
 
   remove(id: number): Observable<boolean> {
-    return this.http.delete(this.getUrl() + '/' + id);
-  }
-
-  private getUrl() {
-    return WidgetService.BASE_URL + WidgetService.ENDPOINT;
+    return this.http.delete(WidgetService.getUrl() + '/' + id);
   }
 }

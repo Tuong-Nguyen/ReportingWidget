@@ -8,16 +8,13 @@ import { WidgetDataSource } from './widget-data-source';
 @Component({
   selector: 'app-widget-table',
   templateUrl: './widget-table.component.html',
-  styleUrls: ['./widget-table.component.scss'],
-  providers: [
-    WidgetService
-  ]
+  styleUrls: ['./widget-table.component.scss']
 })
 export class WidgetTableComponent implements OnInit, AfterViewChecked {
   displayedColumns = ['name', 'data-type', 'type'];
   contextX: number;
   contextY: number;
-  dataSource;
+  dataSource: WidgetDataSource;
 
   private widgets: Widget[] = [];
   private contextWidget: Widget;

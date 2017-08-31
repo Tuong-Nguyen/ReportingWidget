@@ -17,6 +17,7 @@ import { CdkTableModule } from '@angular/cdk';
 
 import { WidgetTableComponent } from './widget-table/widget-table.component';
 import { AddWidgetComponent } from './add-widget/add-widget.component';
+import { WidgetService } from './widget.service';
 
 @NgModule({
   imports: [
@@ -41,6 +42,9 @@ import { AddWidgetComponent } from './add-widget/add-widget.component';
   declarations: [
     WidgetTableComponent,
     AddWidgetComponent
+  ],
+  providers: [
+    WidgetService
   ]
 })
 export class WidgetManagementModule {
