@@ -1,10 +1,12 @@
 export class Widget {
+  id: number;
   name: string;
   type: string;
   dataStream: string;
   defaultSize: WidgetSize;
 
-  constructor(name: string, type: string, dataStream: string, defaultSize: WidgetSize) {
+  constructor(id: number, name: string, type: string, dataStream: string, defaultSize: WidgetSize) {
+    this.id = id;
     this.name = name;
     this.type = type;
     this.dataStream = dataStream;

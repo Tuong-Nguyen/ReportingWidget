@@ -1,31 +1,42 @@
 import { DataSource } from '@angular/cdk';
 import { Observable } from 'rxjs/Observable';
 import { MdSort } from '@angular/material';
+import { EventEmitter } from '@angular/core';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 
 import { Widget } from '../widget';
-import { WidgetService } from '../widget.service';
 
 export class WidgetDataSource extends DataSource<any> {
-  private widgetService: WidgetService;
+  private widgets: Widget[];
   private sort: MdSort;
+  private dataChange = new EventEmitter();
 
-  constructor(widgetService: WidgetService, sort: MdSort) {
+  constructor(widgets: Widget[], sort: MdSort) {
     super();
-    this.widgetService = widgetService;
+    this.widgets = widgets;
     this.sort = sort;
   }
 
   connect(): Observable<Widget[]> {
-    return this.widgetService.getWidgets();
+    const dataSourceChanges = [
+      this.sort.mdSortChange,
+      this.dataChange
+    ];
+    return Observable.merge(...dataSourceChanges).map(() => {
+      return this.getSortedData();
+    });
   }
 
   disconnect() {}
 
+  notifyDataSetChanged() {
+    this.dataChange.emit(true);
+  }
+
   getSortedData(): Widget[] {
-    const widgets = [];
+    const widgets = this.widgets.slice();
 
     if (!this.sort.active || this.sort.direction === '') {
       return widgets;

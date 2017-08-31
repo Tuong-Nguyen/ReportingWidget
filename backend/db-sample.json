@@ -1,33 +1,23 @@
 {
   "widgets": [
     {
-      "id": 1,
+      "id": 0,
       "name": "piepie",
       "type": "Pie",
       "dataStream": "Agent",
       "defaultSize": {
-        "rows": 12,
-        "columns": 8
+        "rows": 1,
+        "columns": 11
       }
     },
     {
-      "id": 2,
+      "id": 1,
       "name": "barbar",
-      "type": "Bar Chart",
-      "dataStream": "Queue",
-      "defaultSize": {
-        "rows": 2,
-        "columns": 4
-      }
-    },
-    {
-      "id": 3,
-      "name": "plotplot",
-      "type": "Plot Chart",
+      "type": "Bar",
       "dataStream": "Agent",
       "defaultSize": {
-        "rows": 5,
-        "columns": 4
+        "rows": 1,
+        "columns": 11
       }
     }
   ]

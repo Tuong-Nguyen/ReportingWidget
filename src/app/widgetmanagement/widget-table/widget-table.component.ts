@@ -19,6 +19,7 @@ export class WidgetTableComponent implements OnInit, AfterViewChecked {
   contextY: number;
   dataSource;
 
+  private widgets: Widget[] = [];
   private contextWidget: Widget;
   private showContextMenu = false;
   private widgetService: WidgetService;
@@ -31,7 +32,9 @@ export class WidgetTableComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.dataSource = new WidgetDataSource(this.widgetService, this.sort);
+    this.dataSource = new WidgetDataSource(this.widgets, this.sort);
+    this.getWidgets();
+
     this.contextMenuTrigger.onMenuClose.subscribe(() => this.showContextMenu = false);
   }
 
@@ -56,5 +59,18 @@ export class WidgetTableComponent implements OnInit, AfterViewChecked {
   }
 
   handleDeleteWidget() {
+    this.widgetService
+      .remove(this.contextWidget.id)
+      .subscribe(() => this.getWidgets());
+  }
+
+  private getWidgets() {
+    this.widgetService.getAll().subscribe(widgets => {
+      this.widgets.length = 0;
+      for (const widget of widgets) {
+        this.widgets.push(widget);
+        this.dataSource.notifyDataSetChanged();
+      }
+    });
   }
 }
