@@ -1,0 +1,41 @@
+{
+  "widgets": [
+    {
+      "id": 0,
+      "name": "piepie",
+      "type": "Pie",
+      "dataStream": "Agent",
+      "defaultSize": {
+        "rows": 1,
+        "columns": 11
+      }
+    },
+    {
+      "id": 1,
+      "name": "barbar",
+      "type": "Bar",
+      "dataStream": "Agent",
+      "defaultSize": {
+        "rows": 1,
+        "columns": 11
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "adminUser",
+      "displayname": "Administrator",
+      "password": "12345678"
+    },
+    {
+      "id": "User1",
+      "displayname": "userName1",
+      "password": "123456"
+    },
+    {
+      "id": "User2",
+      "displayname": "userName2",
+      "password": "123456"
+    }
+  ]
+}

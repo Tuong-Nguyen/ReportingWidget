@@ -1,0 +1,24 @@
+.cdk-column-name,
+.cdk-column-data-type,
+.cdk-column-type {
+  display: flex;
+  justify-content: center;
+}
+
+.fab {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.row {
+  &:hover {
+    cursor: pointer;
+    background-color: #f7f7f7;
+  }
+}
+
+.context-menu {
+  visibility: hidden;
+  position: absolute;
+}

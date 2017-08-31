@@ -1,0 +1,7 @@
+.dashboardToolbar{
+  float: right;
+  display: inline-block;
+}
+.dashboardTabs{
+  clear: right;
+}
