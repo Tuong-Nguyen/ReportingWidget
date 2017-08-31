@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map';
 })
 export class DashboardManagementComponent implements OnInit {
   @Input() dashboards: any;
-  displayedColumns = ['dashboardName', 'Actions'];
+  displayedColumns = ['index', 'dashboardName', 'Actions'];
   dataSource: DashboardDataSource | null;
 
   @ViewChild(MdSort) sort: MdSort;

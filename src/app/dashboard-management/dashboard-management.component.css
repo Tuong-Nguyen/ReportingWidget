@@ -1,16 +1,16 @@
-.dashboardManagementHeader{
-
-}
-.heasderTitle{
-  flex: 1;
-  text-align: center;
-}
 .dashboardManagementBody{
   margin-top: 20px;
+  overflow: auto;
 }
 .dashboardManagementFooterActionButton{
   float: right;
   margin: 20px;
+}
+.dashboardManagementFooter{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
 }
 .actionsColumn{
   text-align: center;

@@ -1,22 +1,13 @@
 <div>
-  <div class="dashboardManagementHeader">
-    <md-toolbar class="mat-toolbar mat-primary" color="primary" role="toolbar">
-      <button md-button md-icon-button>
-        <md-icon>menu</md-icon>
-      </button>
-      <div class="heasderTitle">
-        <h2>Dashboar Management</h2>
-      </div>
-      <button md-button md-icon-button md-tooltip="Add New">
-        <md-icon>add_circle</md-icon>
-      </button>
-    </md-toolbar>
-  </div>
   <div class="dashboardManagementBody">
     <md-table [dataSource]="dataSource" mdSort>
-      <ng-container cdkColumnDef="dashboardName" fxFlex="70%">
+      <ng-container cdkColumnDef="index">
+        <md-header-cell *cdkHeaderCellDef> Index </md-header-cell>
+        <md-cell *cdkCellDef="let row; let i = index">{{i+1}}</md-cell>
+      </ng-container>
+      <ng-container cdkColumnDef="dashboardName">
         <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
-        <md-cell *cdkCellDef="let row">{{row.name}}</md-cell>
+        <md-cell *cdkCellDef="let row" contextmenu="actionmenu"><a href="#">{{row.name}}</a></md-cell>
       </ng-container>
       <ng-container cdkColumnDef="Actions">
         <md-header-cell *cdkHeaderCellDef class="actionsColumn"> Actions </md-header-cell>
@@ -31,11 +22,16 @@
       <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
       <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
     </md-table>
-    <div>
+    <div #foofter class="dashboardManagementFooter">
       <button md-button md-mini-fab class="dashboardManagementFooterActionButton"
-              color="primary" md-tooltip="Add New">
-        <md-icon>add_circle</md-icon>
+              color="primary">
+        <md-icon>add</md-icon>
       </button>
     </div>
   </div>
 </div>
+<md-menu id="actionmenu">
+  <button md-menu-item><md-icon>open_in_new</md-icon> Launch</button>
+  <button md-menu-item><md-icon>settings</md-icon> Setting</button>
+  <button md-menu-item><md-icon>delete_forever</md-icon> Delete</button>
+</md-menu>
