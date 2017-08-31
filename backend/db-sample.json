@@ -1,6 +1,34 @@
 {
-  "users": [{
-    "username": "admin",
-    "displayname": "Administrator"
-  }]
+  "widgets": [
+    {
+      "id": 1,
+      "name": "piepie",
+      "type": "Pie",
+      "dataStream": "Agent",
+      "defaultSize": {
+        "rows": 12,
+        "columns": 8
+      }
+    },
+    {
+      "id": 2,
+      "name": "barbar",
+      "type": "Bar Chart",
+      "dataStream": "Queue",
+      "defaultSize": {
+        "rows": 2,
+        "columns": 4
+      }
+    },
+    {
+      "id": 3,
+      "name": "plotplot",
+      "type": "Plot Chart",
+      "dataStream": "Agent",
+      "defaultSize": {
+        "rows": 5,
+        "columns": 4
+      }
+    }
+  ]
 }

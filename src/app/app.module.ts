@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AddWidgetModule } from './addwidget/add-widget.module';
+import { WidgetManagementModule } from './widgetmanagement/widget-management.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { AddWidgetModule } from './addwidget/add-widget.module';
   ],
   imports: [
     BrowserModule,
-    AddWidgetModule
+    WidgetManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

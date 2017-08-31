@@ -1,0 +1,59 @@
+<md-table [dataSource]="dataSource" mdSort>
+  <ng-container cdkColumnDef="name">
+    <md-header-cell *cdkHeaderCellDef md-sort-header>
+      Name
+    </md-header-cell>
+    <md-cell *cdkCellDef="let widget">
+      <a href="#">
+        {{widget.name}}
+      </a>
+    </md-cell>
+  </ng-container>
+  <ng-container cdkColumnDef="data-type">
+    <md-header-cell *cdkHeaderCellDef md-sort-header>
+      Data type
+    </md-header-cell>
+    <md-cell *cdkCellDef="let widget">
+      {{widget.dataStream}}
+    </md-cell>
+  </ng-container>
+  <ng-container cdkColumnDef="type">
+    <md-header-cell *cdkHeaderCellDef md-sort-header>
+      Type
+    </md-header-cell>
+    <md-cell *cdkCellDef="let widget">
+      {{widget.type}}
+    </md-cell>
+  </ng-container>
+  <md-header-row class="table-header" *cdkHeaderRowDef="displayedColumns"></md-header-row>
+  <md-row
+    class="row"
+    *cdkRowDef="let row; columns: displayedColumns;"
+    (contextmenu)="handleContextMenu($event, row)"
+  ></md-row>
+</md-table>
+<button class="fab" md-mini-fab>
+  <md-icon>add</md-icon>
+</button>
+<md-menu #contextMenu="mdMenu">
+  <button md-menu-item (click)="handleLaunchWidget()">
+    <md-icon>launch</md-icon>
+    <span>Launch</span>
+  </button>
+  <button md-menu-item (click)="handleEditWidget()">
+    <md-icon>mode_edit</md-icon>
+    <span>Edit</span>
+  </button>
+  <button md-menu-item (click)="handleDeleteWidget()">
+    <md-icon>delete</md-icon>
+    <span>Delete</span>
+  </button>
+</md-menu>
+<button
+  class="context-menu"
+  md-icon-button
+  [mdMenuTriggerFor]="contextMenu"
+  [style.left.px]="contextX" [style.top.px]="contextY"
+>
+  <md-icon>more_vert</md-icon>
+</button>
