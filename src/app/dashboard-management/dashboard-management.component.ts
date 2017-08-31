@@ -1,8 +1,8 @@
-import {Component, OnInit, Input, ViewChild} from '@angular/core';
+import {AfterViewChecked, Component, OnInit, Input, ViewChild} from '@angular/core';
 import { DataSource} from '@angular/cdk';
 import { Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {MdSort} from '@angular/material';
+import {MdMenuTrigger, MdSort} from '@angular/material';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
@@ -12,15 +12,32 @@ import 'rxjs/add/operator/map';
   templateUrl: './dashboard-management.component.html',
   styleUrls: ['./dashboard-management.component.css']
 })
-export class DashboardManagementComponent implements OnInit {
+export class DashboardManagementComponent implements OnInit, AfterViewChecked {
   @Input() dashboards: any;
+  contextMenuX: number;
+  contextMenuY: number;
+  showContextMenu: boolean;
   displayedColumns = ['index', 'dashboardName', 'Actions'];
   dataSource: DashboardDataSource | null;
-
+  private selectedRow: any;
   @ViewChild(MdSort) sort: MdSort;
+  @ViewChild(MdMenuTrigger) menuTriger: MdMenuTrigger;
   ngOnInit() {
     this.dataSource = new DashboardDataSource(new DashboardDatabase(this.dashboards), this.sort);
     console.log(this.dataSource);
+    this.menuTriger.onMenuClose.subscribe(() => this.showContextMenu = false);
+  }
+  ngAfterViewChecked() {
+    if (this.showContextMenu) {
+      this.menuTriger.openMenu();
+      }
+    }
+  openActionMenu(event, row) {
+    event.preventDefault();
+    this.selectedRow = row;
+    this.contextMenuX = event.x;
+    this.contextMenuY = event.y;
+    this.showContextMenu = true;
   }
 }
 export interface Dashboard {
