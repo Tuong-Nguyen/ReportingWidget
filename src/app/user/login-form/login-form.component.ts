@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,7 +9,12 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 
+  private authenticationService;
   loginForm: FormGroup;
+
+  constructor(authenticationService: AuthenticationService) {
+    this.authenticationService = authenticationService;
+  }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -19,6 +25,12 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.loginForm);
+  }
+
+  async onGetAllUsers() {
+    const data = await this.authenticationService.getAllUsers();
+    console.log('Dataaaaaaaa');
+    console.log(data);
   }
 
 }

@@ -5,6 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdInputModule, MdButtonModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AuthenticationService } from './authentication.service';
+
 
 @NgModule({
   imports: [
@@ -13,13 +17,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MdInputModule,
     MdButtonModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   declarations: [
     LoginFormComponent
   ],
   exports: [
     LoginFormComponent
-  ]
+  ],
+  providers: [AuthenticationService]
 })
 export class UserModule { }
