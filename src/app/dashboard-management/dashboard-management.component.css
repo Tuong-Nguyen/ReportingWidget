@@ -16,5 +16,6 @@
   text-align: center;
 }
 .hiddenMenu{
-  display: none;
+  position: absolute;
+  visibility: hidden;
 }

@@ -9,16 +9,6 @@
         <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
         <md-cell *cdkCellDef="let row" (contextmenu)="openActionMenu($event, row)"><a href="#">{{row.name}}</a></md-cell>
       </ng-container>
-      <ng-container cdkColumnDef="Actions">
-        <md-header-cell *cdkHeaderCellDef class="actionsColumn"> Actions </md-header-cell>
-        <md-cell *cdkCellDef="let row" class="actionsColumn">
-          <div class="actions" fxLayoutAlign="center center" fxLayoutGap="10px">
-            <button md-icon-button><md-icon>open_in_new</md-icon></button>
-            <button md-icon-button><md-icon>settings</md-icon></button>
-            <button md-icon-button><md-icon>delete_forever</md-icon></button>
-          </div>
-        </md-cell>
-      </ng-container>
       <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
       <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
     </md-table>
