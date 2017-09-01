@@ -1,0 +1,30 @@
+<div>
+  <div class="dashboardManagementBody">
+    <md-table [dataSource]="dataSource" mdSort>
+      <ng-container cdkColumnDef="index">
+        <md-header-cell *cdkHeaderCellDef> Index </md-header-cell>
+        <md-cell *cdkCellDef="let row; let i = index">{{i+1}}</md-cell>
+      </ng-container>
+      <ng-container cdkColumnDef="dashboardName">
+        <md-header-cell *cdkHeaderCellDef md-sort-header> Name </md-header-cell>
+        <md-cell *cdkCellDef="let row" (contextmenu)="openActionMenu($event, row)"><a href="#">{{row.name}}</a></md-cell>
+      </ng-container>
+      <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
+    <div #foofter class="dashboardManagementFooter">
+      <button md-button md-mini-fab class="dashboardManagementFooterActionButton"
+              color="primary">
+        <md-icon>add</md-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<md-menu #actionMenu="mdMenu">
+  <button md-menu-item><md-icon>open_in_new</md-icon> Launch</button>
+  <button md-menu-item><md-icon>settings</md-icon> Setting</button>
+  <button md-menu-item><md-icon>delete_forever</md-icon> Delete</button>
+</md-menu>
+<button md-icon-button [mdMenuTriggerFor]="actionMenu" class="hiddenMenu" [style.left.px]="contextMenuX" [style.top.px]="contextMenuY">
+  <md-icon>more_vert</md-icon>
+</button>
