@@ -17,7 +17,7 @@ export class DashboardManagementComponent implements OnInit, AfterViewChecked {
   contextMenuX: number;
   contextMenuY: number;
   showContextMenu: boolean;
-  displayedColumns = ['index', 'dashboardName', 'Actions'];
+  displayedColumns = ['index', 'dashboardName'];
   dataSource: DashboardDataSource | null;
   private selectedRow: any;
   @ViewChild(MdSort) sort: MdSort;
